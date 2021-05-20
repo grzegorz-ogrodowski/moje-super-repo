@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    //listing 10.1
+    function szpital(lekarz,specjalizacja,pacjent) {
+        this.lekarz=lekarz;
+        this.specjalizacja=specjalizacja;
+        this.pacjent=pacjent;
+    }
+    function osoba(imie, nazwisko) {
+        this.nazwisko=nazwisko;
+        this.imie=imie;
+    }
+    pacjent=new osoba("Jan","Konwalski");
+    oddzial=new szpital("P.Nowak","neurolog",pacjent);
+    document.write("<b>lekarz:</b> "+oddzial.lekarz+"<br>");
+    document.write("<b>specjalizacja:</b> "+oddzial.specjalizacja+"<br>");
+    document.write("<b>pacjent:</b> "+oddzial.pacjent.imie +" "+oddzial.pacjent.nazwisko+"<br>");
+
+    //listing 10.2
+    var test=confirm("Test okienka decyzyjnego:<br> ");
+    if(test==true) {
+        document.write("Został kliknięty przycisk OK.");
+    }
+    else{
+        document.write("został kliknięty przycisk Anuluj.<br>");
+    }
+
+    //listing 10.3
+    function przekierowanie(){
+        window.location.replace("http://www.wsip.pl/");
+    }
+    setTimeout("przekierowanie() ;", 10000);
+    document.write("Za 10s. nastąpi przekierowywanie na stronę<br>");
+    document.write("www.wsip.pl");
+    </script>
+</body>
+</html>
